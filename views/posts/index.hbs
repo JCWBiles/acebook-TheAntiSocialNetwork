@@ -1,8 +1,47 @@
+<head>
+  <title>Chitter - Home</title>
+  <style>
+
+    section{
+      background: white;
+    }
+    .center{
+      margin: -10px;
+      width: 80%;
+      border: 20px solid black;
+      padding: 10px;
+    }
+    textarea{
+      margin-left: 40px;
+      width: 60%;
+      padding: 20px;
+    }
+    nav a{
+      margin-top:-40px;
+      float: right;
+    }
+  </style>
+</head>
+<nav>
+  <a class="new-post-link" href="/">
+    <img src="https://image.flaticon.com/icons/svg/20/20176.svg" width="140" height="40">
+  </a>
+</nav>
 <h1>Timeline</h1>
+<div class="center" >
 <ul class="posts">
   {{#each posts}}
-  <li>{{this.message}}</li>
+  <section>
+    <p>{{this.message}}</p>
+    <p style="margin: 20px; padding: 20px; text-align: right;" >{{this.date}}</p>
+    <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete" method="post">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input type="submit" value="Delete" />
+    </form>
+  </section>
   {{/each}}
 </ul>
+</div>
+<br>
 
 <a class="new-post-link" href="/posts/new">New post</a>

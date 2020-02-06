@@ -23,7 +23,7 @@ var PostsController = {
   Delete: function(req, res){
     var post = new Post
 console.log("**1**");
-console.log({_id: req.params.post.id});
+console.log({_id: req.params.id});
     post.remove({_id: req.params.id}, function(err) {
       console.log("***2**");
       if(err) {

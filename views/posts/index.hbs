@@ -1,5 +1,5 @@
 <head>
-  <title>Chitter - Home</title>
+  <title>Acebook-Timeline</title>
   <style>
 
     section{
@@ -34,7 +34,7 @@
   <section>
     <p>{{this.message}}</p>
     <p style="margin: 20px; padding: 20px; text-align: right;" >{{this.date}}</p>
-    <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete" method="post">
+    <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this.id}}" method="post">
         <input type="hidden" name="_method" value="DELETE" />
         <input type="submit" value="Delete" />
     </form>

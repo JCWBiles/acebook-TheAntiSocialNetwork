@@ -4,9 +4,8 @@ var PostsController = {
   Index: function(req, res) {
     Post.find(function(err, posts) {
       if (err) { throw err; }
-
       res.render('posts/index', { posts: posts });
-    });
+    }).sort( { date: -1 } );
   },
   New: function(req, res) {
     res.render('posts/new', {});

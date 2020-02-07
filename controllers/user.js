@@ -20,7 +20,7 @@ var UserController = {
     user.save(function(err) {
       if (err) { throw err; }
 
-      res.status(201).redirect('/welcome');
+      res.status(201).redirect('/main');
     });
   },
 

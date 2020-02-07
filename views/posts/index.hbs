@@ -34,8 +34,8 @@
 <ul class="posts">
   {{#each posts}}
   <section>
-    <p>{{this.message}}</p>
-    <p style="margin: 20px; padding: 20px; text-align: right;" >{{this.date}}</p>
+    <li>{{this.message}}</li>
+    <li>{{this.date}}</li>
     <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this.id}}" method="post">
         <input type="hidden" name="_method" value="DELETE" />
         <input type="submit" value="Delete" />
@@ -46,4 +46,6 @@
 </div>
 <br>
 
-<a class="new-post-link" href="/posts/new" style="margin: 20px;">New post</a>
+
+<a class="new-post-link" href="/posts/new">New post</a><br/>
+<a class="new-post-link" href="/">Home Page</a>

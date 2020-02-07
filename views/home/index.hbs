@@ -18,24 +18,27 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 <div id="navwrapper">
-  <div id="navbar"> <table class="tablewrapper">
+  <div id="navbar"> <table class="tablewrapper" method="post" >
+   <form>
     <tr>
-      <td class="row1">Email or Phone</td>
+      <td class="row1">Email</td>
       <td class="row1">Password</td>
     </tr>
     <tr>
-      <td><input type="text" class="inputtext">
+      <td><input type="text" class="inputtext" name="email">
       </td>
-      <td><input type="text" class="inputtext">
+      <td><input type="password" class="inputtext" name="password">
       </td>
-      <td><div id="button">Log In</div></td>
+      <td>
+        <button type="submit" class="button" value = "Login"><a href="/main" >Log In</a></button>
     </tr>
+        </form>
     <tr>
       <td>
-        <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
-      <td class="row2 h">Forgot your password?</td>
+        {{!-- <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
+      <td class="row2 h">Forgot your password?</td> --}}
   </table>
-    
+
     <h2 class="logowrapper">Acebook by The Anti-Social Network</h2>
    
   </div>
@@ -83,7 +86,7 @@
               <button type="submit" class="btn btn-primary"><a href= '/user'>Signup</a></button>
             </div>
           <div class="formbox">
-            <div class="create"><div class="link h">Create a Page</div> for a celebrity, band or business.</div>
+            {{!-- <div class="create"><div class="link h">Create a Page</div> for a celebrity, band or business.</div> --}}
           </div>
       </div>
      </div>

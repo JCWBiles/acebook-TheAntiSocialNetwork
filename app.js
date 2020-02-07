@@ -7,7 +7,6 @@ var logger = require('morgan');
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
 var userRouter = require('./routes/user');
-var welcomeRouter = require('./routes/welcome');
 var mainRouter = require('./routes/main');
 
 var app = express();
@@ -15,6 +14,13 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,7 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/posts', postsRouter);
 app.use('/user', userRouter);
-app.use('/welcome', welcomeRouter);
 app.use('/main', mainRouter);
 
 

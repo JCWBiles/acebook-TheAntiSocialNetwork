@@ -8,4 +8,16 @@ describe('Timeline', function() {
 
     cy.get('.posts').should('contain', 'Hello, world!');
   });
+
+  it('can delete posts', function(){
+    var post = new Post({ message: 'Hello, world!' });
+    cy.visit('/posts');
+    cy.get('.posts').should('contain', 'Hello, world!');
+    cy.contains('delete').click();
+
+    cy.visit('/posts');
+    cy.get('.posts').should('not.contain', 'Hello, world!');
+  });
+
+
 });

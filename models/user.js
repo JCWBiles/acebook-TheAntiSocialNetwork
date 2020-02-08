@@ -11,10 +11,6 @@ var UserSchema = new mongoose.Schema({
 });
 
 var User = mongoose.model('Users', UserSchema);
-// 
-// User.findByIdAndRemove({'_id': {"$oid":"5e3bfb927b5e1231762bd7f8"}}).exec(function(err){
-//   console.log(User);
-// });
 
 
 module.exports = User;

@@ -27,22 +27,22 @@
   <h1 style="color: black; margin: 50px;">Timeline</h1>
   <!-- HTML SCSS JSResult
   EDIT ON ****CodePen example -->
-  <div class="wrapper">
-    <section class="block">
+  <div class="wrapper" style="margin-top: -40px;">
+    <section id="block" class="posts">
       <div class="each-year">
         <div class="title" id="date">2020</div>
-        {{#each posts}}
-        <div class="each-event">
-          <div class="event-description">
-            <li>{{this.message}}</li>
-            <li style="margin-bottom: 20px;">{{this.date}}</li>
-            <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this._id}}" method="post">
-              <input type="hidden" name="_method" value="DELETE" />
-              <input type="submit" value="Delete" />
-            </form>
+          {{#each posts}}
+          <div class="each-event">
+            <div class="event-description">
+              <li>{{this.message}}</li>
+              <li style="margin-bottom: 20px;">{{this.date}}</li>
+              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this._id}}" method="post">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="submit" value="Delete" />
+              </form>
+            </div>
           </div>
-        </div>
-        {{/each}}
+          {{/each}}
     </section>
     <section class="block">
       <div class="each-year">

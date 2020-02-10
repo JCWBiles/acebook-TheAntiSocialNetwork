@@ -7,9 +7,11 @@ var PostsController = {
       res.render('posts/index', { posts: posts });
     }).sort( { date: -1 } );
   },
+
   New: function(req, res) {
     res.render('posts/new', {});
   },
+
   Create: function(req, res) {
     var post = new Post(req.body);
     post.save(function(err) {
@@ -26,6 +28,5 @@ Delete: function(req, res){
     })
   }
 };
-
 
 module.exports = PostsController;

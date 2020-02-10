@@ -7,4 +7,5 @@ router.get('/', UserController.Index);
 router.post('/', UserController.Create);
 router.get('/new', UserController.New);
 
+
 module.exports = router;

@@ -36,7 +36,7 @@
           <div class="event-description">
             <li>{{this.message}}</li>
             <li style="margin-bottom: 20px;">{{this.date}}</li>
-            <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this.id}}" method="post">
+            <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this._id}}" method="post">
               <input type="hidden" name="_method" value="DELETE" />
               <input type="submit" value="Delete" />
             </form>

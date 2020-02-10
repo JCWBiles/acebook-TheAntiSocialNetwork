@@ -6,8 +6,8 @@ var UserController = {
     // User.find(function(err, users) {
     //   if (err) { throw err; }
 
-      res.render('user/index', { title: 'Sign Up'});
-    },
+    res.render('user/index', { title: 'Sign Up'});
+  },
 
   Create: function(req, res) {
     var user = new User({
@@ -20,8 +20,10 @@ var UserController = {
 
     user.save(function(err) {
       if (err) { throw err; }
-
-      res.status(201).redirect('/main');
+      else {
+        req.session.userId = user._id;
+        res.status(201).redirect('/main')
+      }
     });
   },
 
@@ -29,50 +31,45 @@ var UserController = {
     res.render('user/new', {});
   },
   
-  // Authenticate: function (email, password, callback) {
-  //   UserSchema.statics.authenticate = function (email, password, callback) {
-  //   User.findOne({ email: email })
-  //     .exec(function (err, user) {
-  //       if (err) {
-  //         return callback(err)
-  //       } else if (!user) {
-  //         var err = new Error('User not found.');
-  //         err.status = 401;
-  //         return callback(err); 
-  //       }
-  //       bcrypt.compare(password, user.password, function (err, result) {
-  //         if (result === true) {
-  //           return callback(null, user);
-  //         } else {
-  //           return callback();
-  //         }
-  //       })
-  //     });
-  // };
+  Authenticate: function(req, res) {
+    // var user = new User({
+    //   firstname: req.body.firstname,
+    //   lastname: req.body.lastname,
+    //   email: req.body.email,
+    //   password: req.body.password,
+    //   user_id: req.body.user_id
+    // });
 
-  // Authenticate: function(req,res) {
-  //   var user = new User({
-  //     email: req.body.email,
-  //     password: req.body.password
-  //     // user_id: req.body.user_id
-  //   });
+    // User.findOne({ email: req.body.email }, function(err, user){
+    //   console.log("LOOK HERE")
+    //   if (err) {throw err;}
+    //
+    //   if (user){
+    //     console.log("LOOK!!!")
+    //     if (bcrypt.compare(req.body.password, user.password, function(err, result){
+    //       if (err) {throw err;}
+    //       if(result) {
+    //         // req.session.userId = user._id;
+    //         console.log("LOOK HERE")
+    //         console.log(user._id)
+    //         res.status(201).redirect('/main')
+    //       }
+    //     }));
+    //   }
 
-  //   user.isMatch(function(err) {
-  //     if (err) { throw err; }
+      User.find({ email: req.body.email}, function(err,user){
+        console.log(user)
+        console.log('1')
+        if (!user) {
+          throw err;
+        }
+        else {
+          req.session.userId = user._id;
+          res.status(201).redirect('/main')
+        }
+      });
+  }
 
-  //     res.status(201).redirect('/main');
-  //   });
-  // },
-//   Authenticate: passport.use(new LocalStrategy(
-//     function(email, password, done) {
-//       User.findOne({ email: email }, function (err, user) {
-//         if (err) { return done(err); }
-//         if (!user) { return done(null, false); }
-//         if (!user.verifyPassword(password)) { return done(null, false); }
-//         return done(null, user);
-//       });
-//     }
-//   ))
 };
   
 module.exports = UserController;

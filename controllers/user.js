@@ -1,5 +1,5 @@
 var User = require('../models/user');
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcrypt');
 
 var UserController = {
   Index: function(req, res) {

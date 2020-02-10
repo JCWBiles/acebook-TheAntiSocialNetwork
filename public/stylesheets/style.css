@@ -1420,12 +1420,12 @@ header
   padding: 100px 20px 200px;
   box-sizing: border-box;
 }
-.block {
+#block {
   z-index: 1;
   position: relative;
   margin-bottom: 90px;
 }
-.block:before {
+#block:before {
   content: "";
   position: absolute;
   height: calc(100% - 40px);

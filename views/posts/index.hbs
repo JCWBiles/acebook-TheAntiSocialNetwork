@@ -28,12 +28,12 @@
   <!-- HTML SCSS JSResult
   EDIT ON ****CodePen example -->
   <div class="wrapper" style="margin-top: -40px;">
-    <section class="block">
+    <section id="block" class="posts">
       <div class="each-year">
         <div class="title" id="date">2020</div>
-        <ul class="posts">
+
           {{#each posts}}
-          <div class="each-event">
+          <div class="each-event" >
             <div class="event-description">
               <li>{{this.message}}</li>
               <li style="margin-bottom: 20px;">{{this.date}}</li>
@@ -44,7 +44,7 @@
             </div>
           </div>
           {{/each}}
-        </ul>
+
     </section>
     <section class="block">
       <div class="each-year">

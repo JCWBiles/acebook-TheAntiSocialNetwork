@@ -17,22 +17,24 @@
 
 <div id="navwrapper">
   <div id="navbar"> <table class="tablewrapper">
-    <tr>
-      <td class="row1">Email</td>
-      <td class="row1">Password</td>
-    </tr>
-    <tr>
-      <td><input type="text" class="inputtext">
-      </td>
-      <td><input type="text" class="inputtext">
-      </td>
-      <td><div id="button">Log In</div></td>
-    </tr>
-    <tr>
-      <td>
-        <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
-      <td class="row2 h">Forgot your password?</td>
-  </table>
+    <form class="" action="/auth" method="post">
+      <tr>
+        <td class="row1">Email</td>
+        <td class="row1">Password</td>
+      </tr>
+      <tr>
+        <td><input type="text" name= "email" class="inputtext">
+        </td>
+        <td><input type="text" name= "password" class="inputtext">
+        </td>
+        <td><button type="submit" value = "Submit" id="button">Log In</button></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
+        <td class="row2 h">Forgot your password?</td>
+    </table>
+    </form>
 
     <h2 class="title" class="logowrapper">{{title}} by The Anti-Social Network</h2>
 

@@ -10,14 +10,24 @@ describe('Timeline', function() {
   });
 
   it('can delete posts', function(){
-    var post = new Post({ message: 'Hello, world!' });
     cy.visit('/posts');
-    cy.get('.posts').should('contain', 'Hello, world!');
-    cy.contains('delete').click();
+    cy.contains('New post').click();
 
-    cy.visit('/posts');
-    cy.get('.posts').should('not.contain', 'Hello, world!');
+    cy.get('#new-post-form').find('[type="text"]').type('H!');
+    cy.get('#new-post-form').submit();
+    cy.get('.posts').should('contain', 'H!');
+    cy.contains('delete').first().click();
+    cy.get('.posts').should('not.contain', 'H!');
   });
 
-
+//
+//
+//   Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+//     visit('/bookmarks')
+//     expect(page).to have_link('Makers Academy', href: 'http://www.makersacademy.com')
+//
+//     first('.bookmark').click_button 'Delete'
+//
+//     expect(current_path).to eq '/bookmarks'
+//     expect(page).not_to have_link('Makers Academy', href: 'http://www.makersacademy.com')
 });

@@ -2,6 +2,7 @@ var Post = require('../models/post');
 
 var PostsController = {
   Index: function(req, res) {
+    console.log('INDEX Running')
     Post.find(function(err, posts) {
       if (err) { throw err; }
       res.render('posts/index', { posts: posts });
@@ -9,36 +10,22 @@ var PostsController = {
   },
 
   New: function(req, res) {
+    console.log('NEW Running')
     res.render('posts/new', {});
   },
 
   Create: function(req, res) {
+    console.log('CREATE Running')
     var post = new Post(req.body);
     post.save(function(err) {
       if (err) { throw err; }
 
       res.status(201).redirect('/posts');
     })
-
-    // promise.then(function(err) {
-    //   res.render('posts/edit', {});
-    //   if (err) { throw err; }
-    //   // If a Review was created successfully, find one Product with an `_id` equal to `req.params.id`. Update the Product to be associated with the new Review
-    //   // { new: true } tells the query that we want it to return the updated Product -- it returns the original by default
-    //   // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-    //   return Post.findOneAndUpdate({ _id: req.params.id }, { message: req.params.message }, { new: true });
-    // })
-    // promise.then(function(res) {
-    //   // If we were able to successfully update a Product, send it back to the client
-    //   res.status(201).redirect('/posts');
-    // })
-    // promise.catch(function(err) {
-    //   // If an error occurred, send it to the client
-    //   if (err) { throw err; }
-    // });
   },
 
   Delete: function(req, res){
+    console.log('DELETE Running')
     Post.findByIdAndRemove({_id: req.params._id}, function(err){
       if (err) { throw err; }
       res.status(201).redirect('/posts');
@@ -47,12 +34,11 @@ var PostsController = {
 
 
   Change: function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     Post.find({_id: req.params._id}, function(err, posts) {
+      // console.log(posts);
       if (err) { throw err; }
-      res.render('posts/edit', {
-        message: posts.message,
-      });
+      res.render('posts/edit', { posts: posts })
     })
   },
 
@@ -78,44 +64,42 @@ var PostsController = {
   // }
 
 
-  Edit: function(req, res){
-    console.log(req.body);
-    Post.find({_id: req.params._id}, function(err, posts) {
-      if (!err){
-        res.render('/posts/edit',{
-          message: posts.message
-        });
-      }
-    })
-  },
+  // Edit: function(req, res){
+  //   console.log(req.body);
+  //   Post.findOneAndUpdate({_id: req.params._id }, {$set: { message: req.params.message }}, {new: true}, function(err, posts) {
+  //     console.log(posts);
+  //     if (!err){
+  //       res.status(201).redirect('/posts',{
+  //         message: posts.message
+  //       });
+  //     }
+  //   })
+  // },
 
-  NewP: function(req, res){
-    Post.find({_id: req.params._id}, function(err, posts) {
-      if (!err){
-        res.render('/posts',{
-          message: posts.message
-        });
-      }
-    })
-  }
-  // if (posts){
-  //     // res.render('posts/edit', {});
-  //     console.log("working???????");
-  //       console.log("Why arent you working???????");
-  //       Post.updateOne({_id: req.params._id}, {$set: { message: req.params.message }}, {new: true}, function(err, posts){
-  //         console.log(posts);
-  //         res.render('posts/edit',{});
-  //         console.log({message: req.params.message});
-  //         if (err) { throw err; }
-  //         console.log("Hi2");
-  //         console.log("Hi3");
-  //         // res.render('posts/edit',{});
-  //         console.log(err);
-  //         console.log(posts)
-  //         // res.render('/posts',{});
-  //         // res.status(201).redirect('/posts');
-  //       })
-  //   }
+Edit: function(req, res){
+  console.log('EDIT Running')
+  console.log(req.body.message)
+  // console.log(req.body);
+      // res.render('posts/edit', {});
+      // console.log("working???????");
+      //   console.log("Why arent you working???????");
+      Post.findOneAndUpdate({_id: req.params._id}, {$set: { message: req.body.message }, overwrite: true} , function(err, posts){
+
+          console.log("finished upodate");
+          // res.render('posts/edit',{});
+          // console.log({message: req.params.message});
+          if (err) { throw err; }
+          // console.log("Hi2");
+          // console.log("Hi3");
+          // res.render('posts/edit',{});
+          // console.log(err);
+          // console.log(posts)
+          // res.render('/posts',{});
+          res.status(201).redirect('/posts');
+
+        })
+
+}
 
 };
 

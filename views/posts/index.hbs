@@ -36,12 +36,11 @@
             <div class="event-description">
               <li>{{this.message}}</li>
               <li style="margin-bottom: 20px;">{{this.date}}</li>
-              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/{{this._id}}" method="post">
+              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete/{{this._id}}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />
                 <input type="submit" value="Delete" />
               </form>
-              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/edit" method="post">
-                <a href="/posts/edit/{{this._id}}"><button type="button" name="edit" value="{{this.message}}" class="btn btn-outline-secondary">EDIT</button></a>
+              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/edit/{{this._id}}" method="get">
                 <input type="submit" value="Edit" />
               </form>
               <!-- <a href="/posts/edit">Edit</a> -->

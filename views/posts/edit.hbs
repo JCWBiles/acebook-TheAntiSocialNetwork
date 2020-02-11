@@ -1,7 +1,9 @@
 <h2>Edit your post:</h2>
+{{#each posts}}
 <form id="new-post-form" action="/posts/{{this._id}}" method="post">
     <input type="hidden" name="_method" value="PATCH" />
   <label for="message">Message: </label>
   <input id="message" type="text" name="message" value="{{this.message}}">
   <input type="submit" value="Submit">
 </form>
+{{/each}}

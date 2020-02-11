@@ -40,6 +40,11 @@
                 <input type="hidden" name="_method" value="DELETE" />
                 <input type="submit" value="Delete" />
               </form>
+              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/edit" method="post">
+                <a href="/posts/edit/{{this._id}}"><button type="button" name="edit" value="{{this.message}}" class="btn btn-outline-secondary">EDIT</button></a>
+                <input type="submit" value="Edit" />
+              </form>
+              <!-- <a href="/posts/edit">Edit</a> -->
             </div>
           </div>
           {{/each}}

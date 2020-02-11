@@ -23,5 +23,6 @@
       "node"
     ],
     "rules": {
+    "no-undef: off"  
     }
 }

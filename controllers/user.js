@@ -30,11 +30,9 @@ var UserController = {
   New: function(req, res) {
     res.render('user/new', {});
   },
-  
+
   Authenticate: function(req, res) {
     User.findOne({email: req.body.email}, function(err,user){
-      console.log(user);
-      console.log('1');
       if (user) {
         bcrypt.compare(req.body.password, user.password, function (err, result) {
           if (result == true) {
@@ -45,7 +43,6 @@ var UserController = {
             console.log('wrong password');
             res.status(201).redirect('/')
           }
-
         })
       }
       else {
@@ -54,7 +51,6 @@ var UserController = {
       }
     });
   }
-
 };
-  
+
 module.exports = UserController;

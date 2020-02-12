@@ -1,4 +1,5 @@
 var Post = require('../models/post');
+var session = require('express-session');
 
 var PostsController = {
   Index: function(req, res) {
@@ -48,7 +49,14 @@ var PostsController = {
       if (err) { throw err; }
       res.status(201).redirect('/posts');
     });
-  }
+  },
+
+  Comment: function(req, res){
+    Post.find({_id: req.params._id}, function(err, posts) {
+      if (err) { throw err; }
+      res.render('posts/comment', { posts: posts })
+    })
+  },
 
 };
 

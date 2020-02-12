@@ -6,6 +6,9 @@
 //   var m = d.getMinutes();
 //   var h = d.getHours();
 //   div.innerHTML = h + ":" + m + ":" + s;
+
 // }
 
 // setInterval(time, 1000);
+
+// time()

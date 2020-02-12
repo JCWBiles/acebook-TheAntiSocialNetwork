@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src="javascripts/login/index.js"></script>
   <title>Acebook by The Anti-Social Network</title>
 </head>
 <body>
   <a class="new-post-link" href="/posts">Navigate to page to create a New post</a><br/>
   <a class="new-post-link" href="/main">Click here to navigate to main page</a>
-  {{!-- <script src="javascript/login/index"></script> --}}
-  <div id="curr_time"></div>
+  <div id="curr_time" onload="time()"></div>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -87,6 +88,19 @@
       </div>
      </div>
     </div>
+  <script>
+    var div = document.getElementById('curr_time'); 
+    function time() {
+    div.innerHTML = "";
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    div.innerHTML = h + ":" + m + ":" + s;
+  }
+
+  setInterval(time, 1000); 
+  </script>
 
 </body>
 </html>

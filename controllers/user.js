@@ -30,22 +30,21 @@ var UserController = {
   New: function(req, res) {
     res.render('user/new', {});
   },
-  
+
   Authenticate: function(req, res) {
     User.findOne({email: req.body.email}, function(err,user){
-      console.log(user);
-      console.log('1');
       if (user) {
         bcrypt.compare(req.body.password, user.password, function (err, result) {
           if (result == true) {
             req.session.userId = user._id;
+            console.log(req.session.userId)
             res.redirect('/main');
           }
           else {
             console.log('wrong password');
+
             res.status(201).redirect('/')
           }
-
         })
       }
       else {
@@ -53,8 +52,35 @@ var UserController = {
         res.status(201).redirect('/')
       }
     });
-  }
+  },
 
+  // Dashboard: function(req, res){
+  //     console.log(req.session.userId)
+  //     if(!req.session.userId){
+  //       res.unauthorizedRequest('You are not logged in',res);
+  //       res.status(201).redirect('/')
+  //     }else{
+  //       res.successResponse('Welcome to dashboard!',res,req.session.userId);
+  //     }
+  //     res.render('main/index', { title: 'Welcome' });
+  // },
+
+
+  Logout: function(req, res) {
+    // var user = new User;
+    req.session.userId = user._id;
+    console.log(req.session.userId)
+    req.session.destroy(function(err){
+      if(err){
+        console.log(err);
+        throw err;
+      }
+      else
+      {
+        res.status(201).redirect('/',  req.flash('notify', 'You have logged out!') );
+      }
+    });
+  }
 };
-  
+
 module.exports = UserController;

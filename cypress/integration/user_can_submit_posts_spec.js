@@ -17,6 +17,21 @@ describe('Timeline', function() {
     cy.get('#new-post-form').submit();
     cy.get('.posts').should('contain', 'H!');
     cy.contains('delete').first().click();
+    cy.url().should('eq', '/posts')
+    cy.get('.posts').should('not.contain', 'H!');
+  });
+
+  it('can edit posts', function(){
+    cy.visit('/posts');
+    cy.contains('New post').click();
+
+    cy.get('#new-post-form').find('[type="text"]').type('H!');
+    cy.get('#new-post-form').submit();
+    cy.get('.posts').should('contain', 'H!');
+    cy.contains('edit').first().click();
+    cy.url().should('eq', '/posts/{{posts._id}}/edit')
+    cy.get('#new-post-form').find('[type="text"]').type('L!');
+    cy.get('#new-post-form').submit();
     cy.get('.posts').should('not.contain', 'H!');
   });
 

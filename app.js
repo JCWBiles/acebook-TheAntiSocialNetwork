@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
+var MongoStore = require('connect-mongo')(session);
+var mongoose = require('mongoose');
+var methodOverride = require('method-override');
+var flash = require('express-flash-messages')
+
 
 var homeRouter = require('./routes/home');
 var postsRouter = require('./routes/posts');
@@ -18,6 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //use sessions for tracking logins
+var db = mongoose.connection;
 app.use(session({
   secret: 'work hard',
   resave: true,
@@ -32,8 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'work harder',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({ mongooseConnection: db })
 }));
+app.use(flash())
 
 // route setup
 app.use('/', homeRouter);
@@ -41,7 +49,7 @@ app.use('/posts', postsRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/main', mainRouter);
-
+app.use(methodOverride('_method'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

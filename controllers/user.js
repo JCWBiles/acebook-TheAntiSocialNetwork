@@ -15,9 +15,11 @@ var UserController = {
       lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
-      user_id: req.body.user_id
-    });
 
+    });
+  console.log(req.body.firstname);
+  console.log(req.body.email);
+  console.log(req.body._id);
     user.save(function(err) {
       if (err) { throw err; }
       else {
@@ -68,7 +70,7 @@ var UserController = {
 
   Logout: function(req, res) {
     // var user = new User;
-    req.session.userId = user._id;
+    // req.session.userId = user._id;
     console.log(req.session.userId)
     req.session.destroy(function(err){
       if(err){
@@ -77,10 +79,10 @@ var UserController = {
       }
       else
       {
-        res.status(201).redirect('/',  req.flash('notify', 'You have logged out!') );
+        res.status(201).redirect('/');
       }
     });
   }
 };
-
+ // req.flash('notify', 'You have logged out!')
 module.exports = UserController;

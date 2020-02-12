@@ -1,11 +1,12 @@
 var Post = require('../models/post');
-
+var User = require('../models/user');
 var PostsController = {
   Index: function(req, res) {
     // console.log('INDEX Running')
-    Post.find(function(err, posts) {
+    Post.find(function(err, posts, users) {
       if (err) { throw err; }
-      res.render('posts/index', { posts: posts });
+      res.render('posts/index', { posts: posts, users: users });
+      console.log(req.session.userId);
     }).sort( { date: -1 } );
   },
 
@@ -15,14 +16,26 @@ var PostsController = {
   },
 
   Create: function(req, res) {
-    // console.log('CREATE Running')
-    var post = new Post(req.body);
-    post.save(function(err) {
+    User.find({_id: req.session.userId}, function(err) {
       if (err) { throw err; }
+      // console.log('CREATE Running')
+      var post = new Post({
+        message: req.body.message,
+        date: req.body.date,
+        user: req.body.user,
 
-      res.status(201).redirect('/posts');
+      });
+      console.log(req.body.message);
+      console.log(req.session.userId);
+
+      post.save(function(err) {
+        if (err) { throw err; }
+
+        res.redirect('/posts'); //currently working on attaching user object to post page.
+      })
     })
   },
+
 
   Delete: function(req, res){
     // console.log('DELETE Running')
@@ -50,6 +63,6 @@ var PostsController = {
     });
   }
 
-};
 
+};
 module.exports = PostsController;

@@ -34,7 +34,7 @@
           {{#each posts}}
           <div class="each-event">
             <div class="event-description">
-              <li>{{this.message}}</li>
+              <li>{{this.message}}, {{this.user}}</li>
               <li style="margin-bottom: 20px;">{{this.date}}</li>
               <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete/{{this._id}}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />

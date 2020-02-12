@@ -1,0 +1,8 @@
+<h2>Write comment:</h2>
+{{#each posts}}
+<form id="new-post-form" action="/posts/{{this._id}}/comment" method="post">
+  <label for="message">Comment: </label>
+  <input id="message" type="text" name="comment" value="">
+  <input type="submit" value="Submit">
+</form>
+{{/each}}

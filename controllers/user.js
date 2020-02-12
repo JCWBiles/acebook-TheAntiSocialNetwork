@@ -68,7 +68,7 @@ var UserController = {
 
   Logout: function(req, res) {
     // var user = new User;
-    req.session.userId = user._id;
+    // req.session.userId = user._id;
     console.log(req.session.userId)
     req.session.destroy(function(err){
       if(err){
@@ -77,7 +77,7 @@ var UserController = {
       }
       else
       {
-        res.status(201).redirect('/',  req.flash('notify', 'You have logged out!') );
+        res.status(201).redirect('/',   );
       }
     });
   }

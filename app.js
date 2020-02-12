@@ -15,6 +15,7 @@ var postsRouter = require('./routes/posts');
 var userRouter = require('./routes/user');
 var authRouter = require('./routes/auth');
 var mainRouter = require('./routes/main');
+var commentRouter = require('./routes/posts');
 
 var app = express();
 
@@ -49,6 +50,7 @@ app.use('/posts', postsRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/main', mainRouter);
+app.use('/posts', commentRouter);
 app.use(methodOverride('_method'));
 
 // catch 404 and forward to error handler

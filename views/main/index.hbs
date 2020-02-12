@@ -8,7 +8,7 @@
 </head>
 <body>
   <a class="new-post-link" href="/">Click here to navigate to login page</a>
-  <h1 class="title">{{title}}</h1>
+  <h1 class="title">Welcome</h1>
   <main>
         <header>
             <div class="tb">
@@ -21,7 +21,10 @@
                         <button type="submit"><i class="material-icons">search</i></button>
                     </form>
                 </div>
-                <div class="td" id="f-name-l"><span>{{this.firstname}}'s facebook</span></div>
+
+                {{#if users}}
+                <div class="td" id="f-name-l"><span style="color: white;">{{this.firstname}}'s facebook</span></div>
+                {{/if}}
                 <div class="td" id="i-links">
                     <div class="tb">
                         <div class="td" id="m-td">
@@ -29,6 +32,16 @@
                                 <span class="td"><i class="material-icons">person_add</i></span>
                                 <span class="td"><i class="material-icons">chat_bubble</i></span>
                                 <span class="td m-active"><i class="material-icons">notifications</i></span>
+                                <form class="" action="auth/session/destroy" method="get">
+                                  <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td><button type="submit" value = "Submit" id="button">Log Out</button></td>
+                                  </tr>
+                                </form>
+
                             </div>
                         </div>
                         <div class="td">

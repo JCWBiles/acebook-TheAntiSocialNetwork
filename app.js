@@ -7,6 +7,7 @@ var session = require('express-session')
 var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
+var flash = require('express-flash-messages')
 
 
 var homeRouter = require('./routes/home');
@@ -40,6 +41,7 @@ app.use(session({
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: db })
 }));
+app.use(flash())
 
 // route setup
 app.use('/', homeRouter);

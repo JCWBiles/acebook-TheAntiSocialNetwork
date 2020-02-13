@@ -7,23 +7,35 @@
   <style>
   nav a{
     display: inline;
-    margin-top: -80px;
-    margin-right: -190px;
-    float: right;
+  }
+  .tb{
+    width: 125%;
   }
 </style>
 </head>
 <body>
   <nav>
-    
     <div id="navwrapper">
-        
       <div id="navbar">
-
-        <h1 class="logowrapper" style="color: white;">Acebook</h1>
-        <a class="new-post-link" href="/">
-          <img src="https://image.flaticon.com/icons/svg/20/20176.svg" width="140" height="40">
+        <div  class="td" id="i-links">
+                    <div  class="tb">
+                      <a class="new-post-link" href="/">
+          <h1 class="logowrapper" style="color: white;">Acebook</h1>
         </a>
+                        <div  class="td" id="m-td">
+                            <div class="tb">
+                                <span  class="td"><i class="material-icons"><button type="submit" class="navbut1" value = "Submit"><a href="/main">Main Page</a></button></i></span>
+                                <span class="td"><i class="material-icons"><form class="" action="auth/session/destroy" onsubmit="logging_out()" method="get">
+                                  <tr>
+                                    <td><button type="submit" class="navbut2" value = "Submit" id="">Log Out</button></td>
+                                  </tr>
+                                </form></i></span>                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
       </div>
       <div id="curr_time" onload="time()"></div>
     </div>

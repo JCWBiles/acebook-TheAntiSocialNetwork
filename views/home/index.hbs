@@ -9,38 +9,32 @@
   <title>Acebook by The Anti-Social Network</title>
 </head>
 <body>
-  <a class="new-post-link" href="/posts">Navigate to page to create a New post</a><br/>
-  <a class="new-post-link" href="/main">Click here to navigate to main page</a>
-
-  <div id="curr_time" onload="time()"></div>
+  
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 <div id="navwrapper">
-  <div id="navbar"> <table class="tablewrapper">
-    <form class="" action="/auth" onsubmit="social_alert3()" method="post">
-      <tr>
-        <td class="row1">Email</td>
-        <td class="row1">Password</td>
-      </tr>
-      <tr>
-        <td><input type="text" name= "email" onclick="social_alert1()" class="inputtext">
-        </td>
-        <td><input type="text" name= "password" onclick="social_alert2()" class="inputtext">
-        </td>
-        <td><button type="submit" value = "Submit" id="button">Log In</button></td>
-      </tr>
-      <tr>
-        <td>
-          <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
-        <td class="row2 h">Forgot your password?</td>
-    </table>
+  <div id="navbar"> 
+    <table class="tablewrapper">
+      <form class="" action="/auth" onsubmit="social_alert3()" method="post">
+        <tr>
+          <td class="row1">Email</td>
+          <td class="row1">Password</td>
+        </tr>
+        <tr>
+          <td><input type="text" name="email" onclick="social_alert1()" class="inputtext">
+          </td>
+          <td><input type="text" name="password" onclick="social_alert2()" class="inputtext">
+          </td>
+          <td><button type="submit" value ="Submit" id="button">Log In</button></td>
+        </tr>
+      </table>
     </form>
 
     <h2 class="title" class="logowrapper">{{title}} by The Anti-Social Network</h2>
   </div>
+  <div id="curr_time" onload="time()"></div>
   </div>
-
   <div id="contentwrapper">
     <div id="content">
 
@@ -80,8 +74,8 @@
               </div>
             </div>
             <div class="formbox">
-              <button type="submit" class="btn btn-primary"><a href= '/user'>Signup</a></button>
-            </div>
+        <button type="submit" class="signbut bolder" value = ""><a href= '/user'>Signup</a></button>
+      </div>
           <div class="formbox">
           </div>
       </div>

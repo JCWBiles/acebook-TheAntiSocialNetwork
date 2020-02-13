@@ -3,11 +3,14 @@ var User = require('../models/user');
 var PostsController = {
   Index: function(req, res) {
     // console.log('INDEX Running')
-    Post.find(function(err, posts, users) {
+    User.find({_id: req.session.userId}, function(err,users) {
       if (err) { throw err; }
-      res.render('posts/index', { posts: posts, users: users });
+      Post.find(function(err, posts) {
+      if (err) { throw err; }
+      res.render('posts/index', {  posts: posts, users: users });
       console.log(req.session.userId);
     }).sort( { date: -1 } );
+  });
   },
 
   New: function(req, res) {

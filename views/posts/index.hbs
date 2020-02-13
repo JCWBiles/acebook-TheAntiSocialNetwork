@@ -25,63 +25,66 @@
     </div>
   </nav>
   <h1 style="color: black; margin: 50px;">Timeline</h1>
-  <!-- HTML SCSS JSResult
-  EDIT ON ****CodePen example -->
   <div class="wrapper" style="margin-top: -40px;">
     <section id="block" class="posts">
       <div class="each-year">
         <div class="title" id="date">2020</div>
-          {{#each posts}}
-          <div class="each-event">
-            <div class="event-description">
-              <li>{{this.message}}, {{this.user}}</li>
-              <li style="margin-bottom: 20px;">{{this.date}}</li>
-              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete/{{this._id}}" method="post">
-                <input type="hidden" name="_method" value="DELETE" />
-                <input type="submit" value="Delete" />
-              </form>
-              <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/edit/{{this._id}}" method="get">
-                <input type="submit" value="Edit" />
-              </form>
-              <!-- <a href="/posts/edit">Edit</a> -->
-            </div>
-          </div>
-          {{/each}}
-    </section>
-    <section class="block">
-      <div class="each-year">
-        <div class="title" id="date">2019</div>
+
+        {{#each posts}}
         <div class="each-event">
           <div class="event-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <li>{{this.message}}</li>
+            <li style="margin-bottom: 20px;">{{this.date}}</li>
+            <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/delete/{{this._id}}" method="post">
+              <input type="hidden" name="_method" value="DELETE" />
+              <input type="submit" value="Delete" />
+            </form>
+            <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/edit/{{this._id}}" method="get">
+              <input type="submit" value="Edit" />
+            </form>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-  <a class="new-post-link" href="/posts/new">New post</a><br/>
-  <a class="new-post-link" href="/">Home Page</a>
-  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script id="rendered-js">
-  var $element = $('.each-event, .title');
-  var $window = $(window);
-  $window.on('scroll resize', check_for_fade);
-  $window.trigger('scroll');
-  function check_for_fade() {
-    var window_height = $window.height();
-    $.each($element, function (event) {
-      var $element = $(this);
-      var element_height = $element.outerHeight();
-      var element_offset = $element.offset().top;
-      space = window_height - (element_height + element_offset - $(window).scrollTop());
-      if (space < 60) {
-        $element.addClass("non-focus");
-      } else {
-        $element.removeClass("non-focus");
-      }
-    });
-  };
-  </script>
-</body>
-</html>
+        {{/each}}
+        {{#each users}}
+        <p style="color: black;">posted by: {{this.firstname}} {{this.lastname}}</p>
+        {{/each}}
+      </section>
+      <section class="block">
+        <div class="each-year">
+          <div class="title" id="date">2019</div>
+          <div class="each-event">
+            <div class="event-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <a class="new-post-link" href="/posts/new">New post</a><br/>
+    <a class="new-post-link" href="/">Home Page</a>
+
+
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script id="rendered-js">
+    var $element = $('.each-event, .title');
+    var $window = $(window);
+    $window.on('scroll resize', check_for_fade);
+    $window.trigger('scroll');
+    function check_for_fade() {
+      var window_height = $window.height();
+      $.each($element, function (event) {
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_offset = $element.offset().top;
+        space = window_height - (element_height + element_offset - $(window).scrollTop());
+        if (space < 60) {
+          $element.addClass("non-focus");
+        } else {
+          $element.removeClass("non-focus");
+        }
+      });
+    };
+    </script>
+  </body>
+  </html>

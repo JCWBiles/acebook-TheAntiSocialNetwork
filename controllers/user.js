@@ -1,6 +1,5 @@
 var User = require('../models/user');
 var bcrypt = require('bcrypt');
-var session = require('express-session');
 
 var UserController = {
   Index: function(req, res) {

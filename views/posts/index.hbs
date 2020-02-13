@@ -15,13 +15,17 @@
 </head>
 <body>
   <nav>
+    
     <div id="navwrapper">
+        
       <div id="navbar">
+
         <h1 class="logowrapper" style="color: white;">Acebook</h1>
         <a class="new-post-link" href="/">
           <img src="https://image.flaticon.com/icons/svg/20/20176.svg" width="140" height="40">
         </a>
       </div>
+      <div id="curr_time" onload="time()"></div>
     </div>
   </nav>
   <h1 style="color: black; margin: 50px;">Timeline</h1>
@@ -93,6 +97,25 @@
         }
       });
     };
+    </script>
+  <script>
+    {{!-- JS for clock --}}
+    var div = document.getElementById('curr_time'); 
+    function time() {
+    div.innerHTML = "";
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    div.innerHTML = h + ":" + m + ":" + s;
+  }
+
+  setInterval(time, 1000);
     </script>
   </body>
   </html>

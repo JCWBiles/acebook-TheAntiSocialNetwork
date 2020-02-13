@@ -97,11 +97,16 @@
     var s = d.getSeconds();
     var m = d.getMinutes();
     var h = d.getHours();
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
     div.innerHTML = h + ":" + m + ":" + s;
   }
 
   setInterval(time, 1000); 
-  
+
   {{!-- JS for login alerts --}}
   function social_alert1() {
       alert ("Are you sure you want to be social?");

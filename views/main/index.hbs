@@ -32,10 +32,6 @@
                                 <span  class="td m-active"><i class="material-icons">Notifications</i></span>
                                 <form class="" action="auth/session/destroy" onsubmit="logging_out()" method="get">
                                   <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
                                     <td><button type="submit" value = "Submit" id="button">Log Out</button></td>
                                   </tr>
                                 </form>
@@ -152,11 +148,10 @@
                                 <div class="td" id="c-inp">
                                   <form id="new-post-form" action="/posts" method="post">
                                     <input id="message" type="text" name="message" value="" placeholder="What's on your mind?">
-                                    <button type="submit" class="signbut bolder" value = "Submit">Submit</button>
-                                    <button type="submit" href="/posts" class="signbut bolder" value = "Submit">Go to Posts</button>
+                                    <button type="submit" class="signbut_main bolder" value = "Submit">Submit</button>
                                     </form>
-                                     
-                                </div>
+                                    <button type="submit" class="signbut_main bolder" value = "Submit"><a class="new-post-link" href="/posts">Go to Posts</a></button>
+                                  </div>
                             </div>
                             
                             <div id="insert_emoji"><i class="material-icons"></i></div>

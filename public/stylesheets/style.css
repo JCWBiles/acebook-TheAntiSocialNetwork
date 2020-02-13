@@ -584,7 +584,7 @@ header
 
 #profile-banner-image
 {
-    height: 460px;
+    height:660px;
     overflow: hidden;
     z-index: -1;
     
@@ -594,7 +594,7 @@ header
 #profile-banner-image img
 {
     width: 100%;
-    margin-top: -20%;
+    margin-top: 0%;
 }
 
 #profile-pic
@@ -998,7 +998,7 @@ header
     color: #919191;
     text-align: center;
     padding: 13px 20px;
-    margin-top: -64px;
+    margin-top: -100px;
     background-color: #fff;
     box-shadow: 0px 3px 3px #ddd;
     z-index: 3;

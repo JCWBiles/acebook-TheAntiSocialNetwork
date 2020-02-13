@@ -1,1 +1,2 @@
 db.posts.insert({ message: String, date: { type: Date, default: Date.now() } });
+db.comments.insert({ text: String, date: { type: Date, default: Date.now() }, posts_id: { type: ObjectId, ref: "posts"} });

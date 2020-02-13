@@ -1,5 +1,5 @@
 var User = require('../models/user');
-// var user = new User
+
 var MainController = {
   Index: function(req, res) {
     User.find({_id: req.session.userId}, function(err, users) {
@@ -7,8 +7,8 @@ var MainController = {
       // req.session.userId = user._id;
       console.log(req.session.userId)
       res.render('main/index', { users: users });
-  })
-}
+    })
+  }
 }
 
 module.exports = MainController;

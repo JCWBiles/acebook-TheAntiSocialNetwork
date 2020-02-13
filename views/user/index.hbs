@@ -1,4 +1,14 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <title>SIGN UP</title>
+</head>
+<body>
 
 <div id="navwrapper">
   <div id="navbar">
@@ -46,16 +56,16 @@
 <div id="rightbod">
         <div class="signup bolder">{{title}}</div>
         <div class="free bolder">It's free and always will be</div>
-<form class="" action="/user" method="post">
+<form class="" action="/user" onsubmit='return validate()' method="post">
   <div class="formbox">
   <input type="text" class="inputbody in1" name= "firstname" placeholder="First name" required>
   <input type="text" class="inputbody in1 fr" name= "lastname" placeholder="Last name" required>
   </div>
   <div class="formbox">
-  <input type="text" class="inputbody in2" name= "email" placeholder="Email" required>
+  <input type="text" class="inputbody in2" name= "email" placeholder="Email" id='email' required>
   </div>
   <div class="formbox">
-  <input type="text" class="inputbody in2" name= "email2" placeholder="Re-enter email" required>
+  <input type="text" class="inputbody in2" name= "email2" placeholder="Re-enter email" id='email2' required>
   </div>
   <div class="formbox">
   <input type="password" class="inputbody in2" name= "password" placeholder="New password" required>
@@ -69,3 +79,20 @@
         <button type="submit" class="signbut bolder" value = "Submit">Submit</button>
       </div>
 </form>
+
+<script>
+  function validate() {
+    var n1 = document.getElementById('email');
+    var n2 = document.getElementById('email2');
+    if(n1.value != '' && n2.value != '') {
+      if(n1.value == n2.value) {
+        return true;
+      }
+    }
+    alert("The email addresses do not - please try again");
+    return false;
+  };
+</script>
+
+</body>
+</html>

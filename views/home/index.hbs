@@ -5,26 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
+  <script src="javascripts/login/index.js"></script>
   <title>Acebook by The Anti-Social Network</title>
 </head>
 <body>
   <a class="new-post-link" href="/posts">Navigate to page to create a New post</a><br/>
   <a class="new-post-link" href="/main">Click here to navigate to main page</a>
-  <div id="curr_time"></div>
+
+  <div id="curr_time" onload="time()"></div>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 <div id="navwrapper">
   <div id="navbar"> <table class="tablewrapper">
-    <form class="" action="/auth" method="post">
+    <form class="" action="/auth" onsubmit="social_alert3()" method="post">
       <tr>
         <td class="row1">Email</td>
         <td class="row1">Password</td>
       </tr>
       <tr>
-        <td><input type="text" name= "email" class="inputtext">
+        <td><input type="text" name= "email" onclick="social_alert1()" class="inputtext">
         </td>
-        <td><input type="text" name= "password" class="inputtext">
+        <td><input type="text" name= "password" onclick="social_alert2()" class="inputtext">
         </td>
         <td><button type="submit" value = "Submit" id="button">Log In</button></td>
       </tr>
@@ -85,6 +87,40 @@
       </div>
      </div>
     </div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script>
+    {{!-- JS for clock --}}
+    var div = document.getElementById('curr_time'); 
+    function time() {
+    div.innerHTML = "";
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    div.innerHTML = h + ":" + m + ":" + s;
+  }
+
+  setInterval(time, 1000); 
+
+  {{!-- JS for login alerts --}}
+  function social_alert1() {
+      alert ("Are you sure you want to be social?");
+    };
+
+    function social_alert2() {
+      alert ("Are you really sure you want to be social?");
+    };
+
+    function social_alert3() {
+      alert ("LAST CHANCE! You are about to be social");
+    };
+
+  </script>
 
 </body>
 </html>

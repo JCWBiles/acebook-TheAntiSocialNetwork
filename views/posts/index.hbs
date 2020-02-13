@@ -14,6 +14,7 @@
 </style>
 </head>
 <body>
+  {{#if users}}
   <nav>
     <div id="navwrapper">
       <div id="navbar">
@@ -24,7 +25,9 @@
       </div>
     </div>
   </nav>
-  <h1 style="color: black; margin: 50px;">Timeline</h1>
+  {{#users}}
+  <h1 style="color: black; margin: 50px;">{{this.firstname}}'s Timeline</h1>
+  {{/users}}
   <div class="wrapper" style="margin-top: -40px;">
     <section id="block" class="posts">
       <div class="each-year">
@@ -45,9 +48,7 @@
           </div>
         </div>
         {{/each}}
-        {{#each users}}
-        <p style="color: black;">posted by: {{this.firstname}} {{this.lastname}}</p>
-        {{/each}}
+
       </section>
       <section class="block">
         <div class="each-year">
@@ -60,6 +61,7 @@
         </div>
       </section>
     </div>
+    {{/if}}
     <a class="new-post-link" href="/posts/new">New post</a><br/>
     <a class="new-post-link" href="/">Home Page</a>
 

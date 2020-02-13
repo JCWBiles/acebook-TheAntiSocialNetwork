@@ -1,17 +1,13 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema
-var ObjectId = Schema.Types.ObjectId
-
+var Schema = mongoose.Schema;
+// var ObjectId = Schema.Types.ObjectId
 
 let PostSchema = new Schema({
   id: String,
   message: String,
   date: { type: Date, default: Date.now },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' }
+  user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' }
 });
-
-
-
 
 var Post = mongoose.model('Post', PostSchema);
 Post.aggregate([{ "$lookup": {

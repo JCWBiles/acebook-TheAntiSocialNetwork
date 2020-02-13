@@ -5,86 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
+  <script src="javascripts/login/index.js"></script>
   <title>Acebook by The Anti-Social Network</title>
 </head>
+
 <body>
-  <a class="new-post-link" href="/posts">Navigate to page to create a New post</a><br/>
-  <a class="new-post-link" href="/main">Click here to navigate to main page</a>
-  <div id="curr_time"></div>
+  <div id="navwrapper">
+    <div id="navbar"> 
+      <table class="tablewrapper">
+        <form class="" action="/auth" onsubmit="social_alert3()" method="post">
+          <tr>
+            <td class="row1">Email</td>
+            <td class="row1">Password</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="email" onclick="social_alert1()" class="inputtext">
+            </td>
+            <td><input type="text" name="password" onclick="social_alert2()" class="inputtext">
+            </td>
+            <td><button type="submit" value ="Submit" id="button">Log In</button></td>
+          </tr>
+        </table>
+      </form>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+      <h2 class="title" class="logowrapper">{{title}} by The Anti-Social Network</h2>
+    </div>
+    <div id="curr_time" onload="time()"></div>
+    </div>
+    <div id="contentwrapper">
+      <div id="content">
 
-<div id="navwrapper">
-  <div id="navbar"> <table class="tablewrapper">
-    <form class="" action="/auth" method="post">
-      <tr>
-        <td class="row1">Email</td>
-        <td class="row1">Password</td>
-      </tr>
-      <tr>
-        <td><input type="text" name= "email" class="inputtext">
-        </td>
-        <td><input type="text" name= "password" class="inputtext">
-        </td>
-        <td><button type="submit" value = "Submit" id="button">Log In</button></td>
-      </tr>
-      <tr>
-        <td>
-          <div class="row2"><input type="checkbox" checked>Keep me logged in</div></td>
-        <td class="row2 h">Forgot your password?</td>
-    </table>
-    </form>
+        <div id="leftbod">
 
-    <h2 class="title" class="logowrapper">{{title}} by The Anti-Social Network</h2>
-  </div>
-  </div>
-
-  <div id="contentwrapper">
-    <div id="content">
-
-      <div id="leftbod">
-
-        <div class="connect bolder">
-          Un-Connect with friends and the
-          world around you on Acebook.</div>
-
-        <div class="leftbar">
-          <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851565_602269956474188_918638970_n.png" alt="" class="iconwrap fb1"/>
-          <div class="fb1">
-            <span class="rowtext">See posts (if you want)</span>
-            <span class="rowtext2 fb1">from friends (if you have)</span>
-          </div>
-        </div>
+          <div class="connect bolder">
+            Un-Connect with friends and the
+            world around you on Acebook.</div>
 
           <div class="leftbar">
-          <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851585_216271631855613_2121533625_n.png" alt="" class="iconwrap fb1"/>
-          <div class="fb1">
-            <span class="rowtext">Share what's new (or not)</span>
-            <span class="rowtext2 fb1">in your life on your timeline</span>
+            <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851565_602269956474188_918638970_n.png" alt="" class="iconwrap fb1"/>
+            <div class="fb1">
+              <span class="rowtext">See posts (if you want)</span>
+              <span class="rowtext2 fb1">from friends (if you have)</span>
             </div>
           </div>
 
-      </div>
-
-      <div id="rightbod">
-
-        <div class="logowrapper">
-          <img src="images/AntiSocial_logo.png" alt="The Anti-Social Network Logo">
-        </div>
-
-            <div class="formbox">
-              <div class="agree">
-                By clicking Sign Up, you agree to our <div class="link">Terms</div> and that you have read our <div class="link">Data Use Policy</div>, including our <div class="link">Cookie Use</div>.
+            <div class="leftbar">
+            <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851585_216271631855613_2121533625_n.png" alt="" class="iconwrap fb1"/>
+            <div class="fb1">
+              <span class="rowtext">Share what's new (or not)</span>
+              <span class="rowtext2 fb1">in your life on your timeline</span>
               </div>
             </div>
-            <div class="formbox">
-              <button type="submit" class="btn btn-primary"><a href= '/user'>Signup</a></button>
-            </div>
-          <div class="formbox">
-          </div>
-      </div>
-     </div>
-    </div>
 
-</body>
+        </div>
+
+        <div id="rightbod">
+
+          <div class="logowrapper">
+            <img src="images/AntiSocial_logo.png" alt="The Anti-Social Network Logo">
+          </div>
+
+              <div class="formbox">
+                <div class="agree">
+                  By clicking Sign Up, you agree to our <div class="link">Terms</div> and that you have read our <div class="link">Data Use Policy</div>, including our <div class="link">Cookie Use</div>.
+                </div>
+              </div>
+              <div class="formbox">
+          <button type="submit" class="signbut bolder" value = ""><a href= '/user'>Signup</a></button>
+        </div>
+            <div class="formbox">
+            </div>
+        </div>
+      </div>
+      </div>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script>
+    {{!-- JS for clock --}}
+    var div = document.getElementById('curr_time'); 
+    function time() {
+    div.innerHTML = "";
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    div.innerHTML = h + ":" + m + ":" + s;
+  }
+
+  setInterval(time, 1000); 
+
+  {{!-- JS for login alerts --}}
+  function social_alert1() {
+      alert ("Are you sure you want to be social?");
+    };
+
+    function social_alert2() {
+      alert ("Are you really sure you want to be social?");
+    };
+
+    function social_alert3() {
+      alert ("LAST CHANCE! You are about to be social");
+    };
+
+  </script>
+
+  </body>
 </html>

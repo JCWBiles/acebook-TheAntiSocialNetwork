@@ -1,5 +1,6 @@
 var Post = require('../models/post');
 var User = require('../models/user');
+
 var PostsController = {
   Index: function(req, res) {
     // console.log('INDEX Running')
@@ -64,7 +65,14 @@ var PostsController = {
       if (err) { throw err; }
       res.status(201).redirect('/posts');
     });
-  }
+  },
+
+  Comment: function(req, res){
+    Post.find({_id: req.params._id}, function(err, posts) {
+      if (err) { throw err; }
+      res.render('posts/comment', { posts: posts })
+    })
+  },
 
 
 };

@@ -3,9 +3,6 @@ var bcrypt = require('bcrypt');
 
 var UserController = {
   Index: function(req, res) {
-    // User.find(function(err, users) {
-    //   if (err) { throw err; }
-
     res.render('user/index', { title: 'Sign Up'});
   },
 
@@ -55,22 +52,8 @@ var UserController = {
       }
     });
   },
-
-  // Dashboard: function(req, res){
-  //     console.log(req.session.userId)
-  //     if(!req.session.userId){
-  //       res.unauthorizedRequest('You are not logged in',res);
-  //       res.status(201).redirect('/')
-  //     }else{
-  //       res.successResponse('Welcome to dashboard!',res,req.session.userId);
-  //     }
-  //     res.render('main/index', { title: 'Welcome' });
-  // },
-
-
+  
   Logout: function(req, res) {
-    // var user = new User;
-    // req.session.userId = user._id;
     console.log(req.session.userId)
     req.session.destroy(function(err){
       if(err){
@@ -84,5 +67,5 @@ var UserController = {
     });
   }
 };
- // req.flash('notify', 'You have logged out!')
+
 module.exports = UserController;

@@ -71,6 +71,7 @@ h2 {
   font-weight:bold;
   text-align:center;
   color:#fff;
+  display: inline-block;
 }
 
 .tablewrapper {
@@ -278,22 +279,29 @@ h2 {
   display: inline-block;
   cursor: pointer;
 }
+.hidden-input{
+    margin-left: 160px;
+    margin-top: 70px;
+}
 
 .signbut {
-  font-size: 19px;
-  font-weight: 700;
+  display:inline-block;  
+  background-color: #5b72a9;
+  border: 1px solid #999;
+  border-color:#8b9dc3 #2f477a #29447e #1a356e;
+  font-size: 12px;
+  font-weight: 300;
   letter-spacing: 1px;
   color:#fff;
-  min-width: 194px;
-  padding: 7px 20px;
+  /* min-width: 90px;
+  min-height: -100px; */
+  padding: 3px 5px;
   text-align: center;
   -webkit-border-radius: 5px;
-  background: -webkit-linear-gradient(#67ae55, #578843);
-  -webkit-box-shadow: inset 0 1px 1px #a4e388;
-  border: 1px solid;
-border-color: #3b6e22 #3b6e22 #2c5115;
-  margin-top: 10px;
-margin-bottom: 10px;
+  margin-top: -50px;
+  margin-left: 700px;
+  display: inline-block; 
+  margin-bottom: 10px;
   text-shadow: 0 1px 2px rgba(0,0,0,.5);
   cursor:pointer;
 }
@@ -330,9 +338,20 @@ img
 {
     display: block;
     width: 100%;
-    border: 0;
+    border: 10;
+  
 }
-
+.main_profile_pic{
+   position: absolute;
+    display: block;
+    width: 10%;
+    border: 2px solid #707070;
+	border-radius: 50%;
+	border-top-color: #707070;
+    margin-left: 150px;
+    margin-top: -100px;
+    z-index: 2;
+}
 .tb
 {
     display: table;
@@ -345,11 +364,19 @@ img
 }
 
 .td
+
 {
     display: table-cell;
     vertical-align: middle;
+    
+   
 }
-
+.unique{
+    width: 50px;
+    color:white;
+    display: table-cell;
+    vertical-align: middle;
+}
 a
 {
     text-decoration: none;
@@ -360,6 +387,7 @@ button
     padding: 0;
     border: 0;
     background-color: transparent;
+    display: inline;
 }
 
 ::placeholder
@@ -502,7 +530,6 @@ header
 
 #m-td span.m-active:before
 {
-    content: '5';
     position: absolute;
     top: -8px;
     right: 0px;
@@ -552,14 +579,16 @@ header
     bottom: 0px;
     right: 0px;
     height: 180px;
-    z-index: 2;
+    z-index: 1;
 }
 
 #profile-banner-image
 {
-    height: 360px;
+    height: 460px;
     overflow: hidden;
-    z-index: 1;
+    z-index: -1;
+    
+  
 }
 
 #profile-banner-image img
@@ -586,11 +615,15 @@ header
 #u-name
 {
     position: absolute;
-    top: 120px;
-    left: 208px;
+    top: 500px;
+    left: 330px;
     color: #fff;
     font-size: 36px;
     font-weight: bold;
+    border-color: black;
+    border-width: 2px;
+    text-shadow: grey;
+
 }
 
 #m-btns
@@ -660,7 +693,7 @@ header
 /* Content area */
 #main-content
 {
-    padding: 55px 0px 0px 55px;
+    padding: 2px 0px 0px 55px;
 }
 
 #l-col, #m-col, #r-col
@@ -683,7 +716,7 @@ header
 
 .l-mrg
 {
-    margin-top: 28px;
+    margin-top: 18px;
 }
 .l-i
 {
@@ -1310,6 +1343,8 @@ header
     position: relative;
     width: 150px;
 }
+
+
 
 #chat-bar
 {

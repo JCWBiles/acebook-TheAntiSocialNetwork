@@ -29,10 +29,10 @@ describe('Timeline', function() {
     cy.get('#new-post-form').submit();
     cy.get('.posts').should('contain', 'H!');
     cy.contains('Edit').first().click();
-    cy.url().should('eq', '/posts/edit/{{posts._id}}')
     cy.get('#new-post-form').find('[type="text"]').type('L!');
     cy.get('#new-post-form').submit();
     cy.get('.posts').should('not.contain', 'H!');
+    cy.get('.posts').should('not.contain', 'L!');
   });
 
 });

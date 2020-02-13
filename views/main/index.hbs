@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Main Page</title>
+  <title>Profile Page</title>
 </head>
 
 <body>
+  <!-- {{#users}} -->
   <main>
         <header>
             <div class="tb">
@@ -20,8 +21,6 @@
                         <button type="submit"><i class="material-icons"></i></button>
                     </form>
                 </div>
-
-                  {{!-- {{#users}} --}}
 
                 <div  class="td" id="i-links">
                     <div  class="tb">
@@ -36,10 +35,13 @@
                                     </td>
                                     <td>
                                     </td>
-                                    <td><button type="submit" value = "Submit" id="button">Log Out</button></td>
+                                    <td style="background-color: blue;">
+                                      <button type="submit" value = "Submit" class="navbut3">
+                                      <span class="td m-active"><i class="material-icons" style="margin-top:50px;">Log Out</i></span>
+                                    </button>
+                                  </td>
                                   </tr>
                                 </form>
-
                             </div>
                         </div>
                         <div class="td">
@@ -100,9 +102,6 @@
                                 <div class="tr">
 
                                <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="LONDON" data-label_2="WEATHER" data-theme="original" >LONDON WEATHER</a>
-                            <script>
-                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                            </script>
                                 </div>
                             </div>
                         </div>
@@ -152,8 +151,8 @@
                                 <div class="td" id="c-inp">
                                   <form id="new-post-form" action="/posts" method="post">
                                     <input id="message" type="text" name="message" value="" placeholder="What's on your mind?">
-                                    <button type="submit" class="signbut bolder" value = "Submit">Submit</button>
-                                    <button type="submit" href="/posts" class="signbut bolder" value = "Submit">Go to Posts</button>
+                                    <button type="submit" class="signbut_main" value = "Submit">Submit</button>
+                                    <button type="submit" href="/posts" class="signbut_main" value = "Submit">Go to Posts</button>
                                     </form>
 
                                 </div>
@@ -207,9 +206,12 @@
 
     </main>
 
-{{!-- {{/users}} --}}
+<!-- {{/users}} -->
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
 
     <script>
         function logging_out() {

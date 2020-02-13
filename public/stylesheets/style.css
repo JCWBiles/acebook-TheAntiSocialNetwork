@@ -323,7 +323,7 @@ h2 {
   }
 
 /* .signbut {
-    display:inline-block;  
+    display:inline-block;
     background-color: #5b72a9;
     border: 1px solid #999;
     border-color:#8b9dc3 #2f477a #29447e #1a356e;
@@ -338,14 +338,14 @@ h2 {
     -webkit-border-radius: 5px;
     margin-top: -50px;
     margin-left: 700px;
-    display: inline-block; 
+    display: inline-block;
     margin-bottom: 10px;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     cursor:pointer;
   } */
 
 /* .signbut_main {
-    display:inline-block;  
+    display:inline-block;
     background-color: #5b72a9;
     border: 1px solid #999;
     border-color:#8b9dc3 #2f477a #29447e #1a356e;
@@ -360,14 +360,14 @@ h2 {
     -webkit-border-radius: 5px;
     margin-top: -50px;
     margin-left: 700px;
-    display: inline-block; 
+    display: inline-block;
     margin-bottom: 10px;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     cursor:pointer;
 } */
 
 .signbut_main {
-    display:inline-block;  
+    display:inline-block;
     background-color: #5b72a9;
     border: 1px solid #999;
     border-color:#8b9dc3 #2f477a #29447e #1a356e;
@@ -382,7 +382,7 @@ h2 {
     -webkit-border-radius: 5px;
     margin-top: -50px;
     margin-left: 700px;
-    display: inline-block; 
+    display: inline-block;
     margin-bottom: 10px;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     cursor:pointer;
@@ -390,7 +390,7 @@ h2 {
 
   .signbut_main:hover {
     background: -webkit-linear-gradient(#79bc64, #578843);
-  }  
+  }
 
 .signbut:hover {
   background: -webkit-linear-gradient(#79bc64, #578843);
@@ -403,6 +403,7 @@ h2 {
  padding: 0;
  color: white;
  padding-left: 600px;
+ margin-right: -150px;
 }
 
 .navbut2 {
@@ -412,9 +413,31 @@ h2 {
     padding: 0;
     color: white;
     text-align: center;
-    padding-right: 100px;
+    padding-right: 50px;
+    padding-left: 20px;
+    background-color: #f5e5f5;
+    height:60px;
+    text-align: center;
+    margin-top: -700px;
+    padding-top: 35px;
+    padding-bottom: 52px;
    }
 
+   .navbut3 {
+       font-size: 100%;
+       font-family: inherit;
+       border: 0;
+       padding: 0;
+       color: white;
+       text-align: center;
+       padding-right: 80px;
+       padding-left: 30px;
+       background-color: #f5e5f5;
+       height:60px;
+       margin-top: -60px;
+       padding-top: 40px;
+       padding-bottom: 90px;
+      }
 .create {
   border-top: 1px solid #a0a9c0;
   color: #666;
@@ -444,18 +467,18 @@ img
     display: block;
     width: 100%;
     border: 10;
-  
+
 }
 .main_profile_pic{
-   position: absolute;
-    display: block;
-    width: 10%;
-    border: 2px solid #707070;
-	border-radius: 50%;
-	border-top-color: #707070;
-    margin-left: 150px;
-    margin-top: -100px;
-    z-index: 2;
+  position: absolute;
+  display: block;
+  width: 13%;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: white;
+  margin-left: 130px;
+  margin-top: -140px;
+  z-index: 2;
 }
 .tb
 {
@@ -473,8 +496,8 @@ img
 {
     display: table-cell;
     vertical-align: middle;
-    
-   
+
+
 }
 .unique{
     width: 50px;
@@ -692,8 +715,8 @@ header {
     height:660px;
     overflow: hidden;
     z-index: -1;
-    
-  
+
+
 }
 
 #profile-banner-image img
@@ -720,8 +743,8 @@ header {
 #u-name
 {
     position: absolute;
-    top: 500px;
-    left: 330px;
+    top: 650px;
+    left: 400px;
     color: #fff;
     font-size: 36px;
     font-weight: bold;

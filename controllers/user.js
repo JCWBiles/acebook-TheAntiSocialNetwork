@@ -4,9 +4,6 @@ var session = require('express-session');
 
 var UserController = {
   Index: function(req, res) {
-    // User.find(function(err, users) {
-    //   if (err) { throw err; }
-
     res.render('user/index', { title: 'Sign Up'});
   },
 
@@ -16,9 +13,11 @@ var UserController = {
       lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
-      user_id: req.body.user_id
-    });
 
+    });
+  console.log(req.body.firstname);
+  console.log(req.body.email);
+  console.log(req.body._id);
     user.save(function(err) {
       if (err) { throw err; }
       else {
@@ -54,22 +53,8 @@ var UserController = {
       }
     });
   },
-
-  // Dashboard: function(req, res){
-  //     console.log(req.session.userId)
-  //     if(!req.session.userId){
-  //       res.unauthorizedRequest('You are not logged in',res);
-  //       res.status(201).redirect('/')
-  //     }else{
-  //       res.successResponse('Welcome to dashboard!',res,req.session.userId);
-  //     }
-  //     res.render('main/index', { title: 'Welcome' });
-  // },
-
-
+  
   Logout: function(req, res) {
-    // var user = new User;
-    // req.session.userId = user._id;
     console.log(req.session.userId)
     req.session.destroy(function(err){
       if(err){
@@ -78,7 +63,7 @@ var UserController = {
       }
       else
       {
-        res.status(201).redirect('/' );
+        res.status(201).redirect('/');
       }
     });
   }

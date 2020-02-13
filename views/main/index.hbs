@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Main Page</title>
 </head>
+
 <body>
   <a class="new-post-link" href="/">Click here to navigate to login page</a>
   <h1 class="title">Welcome</h1>
@@ -22,9 +23,8 @@
                     </form>
                 </div>
 
-                {{#if users}}
-                <div class="td" id="f-name-l"><span style="color: white;">{{this.firstname}}'s facebook</span></div>
-                {{/if}}
+                  {{#users}}
+
                 <div class="td" id="i-links">
                     <div class="tb">
                         <div class="td" id="m-td">
@@ -61,7 +61,7 @@
                 <div id="profile-pic">
                     <img src="https://imagizer.imageshack.com/img921/3072/rqkhIb.jpg">
                 </div>
-                <div id="u-name">Himalaya Singh</div>
+                <div id="u-name">{{this.firstname}} {{this.lastname}}</div>
                 <div class="tb" id="m-btns">
                     <div class="td">
                         <div class="m-btn"><i class="material-icons">format_list_bulleted</i><span>Activity log</span></div>
@@ -183,7 +183,7 @@
                                 <a href="#" class="td p-p-pic"><img src="https://imagizer.imageshack.com/img923/2452/zifFKH.jpg" alt="Rajeev's profile pic"></a>
                                 <div class="td p-r-hdr">
                                     <div class="p-u-info">
-                                        <a href="#">Rajeev Singh</a> shared a memory with <a href="#">Himalaya Singh</a>
+                                        <a href="#">Rajeev Singh</a> shared a memory with <a href="#">{{this.firstname}} {{this.lastname}}</a>
                                     </div>
                                     <div class="p-dt">
                                         <i class="material-icons">calendar_today</i>
@@ -239,6 +239,8 @@
         </div>
         <div id="device-bar-2"><i class="fab fa-apple"></i></div>
     </main>
+    
+{{/users}}
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 

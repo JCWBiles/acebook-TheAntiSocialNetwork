@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <!-- {{#users}} -->
+  {{#users}}
   <main>
         <header>
             <div class="tb">
@@ -73,9 +73,6 @@
 
                 </div>
                 <div id="u-name">{{this.firstname}} {{this.lastname}}</div>
-                <div class="tb" id="m-btns">
-            <div id="black-grd"></div>
-        </div>
         <div id="main-content">
             <div class="tb">
                 <div class="td" id="l-col">
@@ -152,9 +149,8 @@
                                   <form id="new-post-form" action="/posts" method="post">
                                     <input id="message" type="text" name="message" value="" placeholder="What's on your mind?">
                                     <button type="submit" class="signbut_main" value = "Submit">Submit</button>
-                                    <button type="submit" href="/posts" class="signbut_main" value = "Submit">Go to Posts</button>
                                     </form>
-
+                                    <button type="submit" class="signbut_main bolder" value = "Submit"><a class="new-post-link" href="/posts">Go to Posts</a></button>
                                 </div>
                             </div>
 
@@ -206,7 +202,7 @@
 
     </main>
 
-<!-- {{/users}} -->
+{{/users}}
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>

@@ -27,7 +27,7 @@ a {
 
 #navbar {
   margin: 0 auto;
-  width:980px;
+  width:1000px;
   height:59px;
 }
 
@@ -61,6 +61,7 @@ h2 {
   padding-top: 20px;
   color:#fff;
   -webkit-font-smoothing: antialiased;
+  margin-left: -90px;
 }
 
 .logowrapper {
@@ -98,6 +99,12 @@ h2 {
 }
 
 .row1 {
+  color:#fff;
+  font-size:11px;
+  width:164px;
+  cursor:pointer;
+}
+.row2 {
   color:#fff;
   font-size:11px;
   width:164px;
@@ -401,7 +408,7 @@ h2 {
  font-family: inherit;
  border: 0;
  padding: 0;
- color: white;
+ color: darkred;
  padding-left: 600px;
  margin-right: -150px;
 }
@@ -418,25 +425,26 @@ h2 {
     background-color: #f5e5f5;
     height:60px;
     text-align: center;
-    margin-top: -700px;
+    margin-top: -500px;
     padding-top: 35px;
     padding-bottom: 50px;
+    margin-right: -80px;
    }
 
    .navbut3 {
        font-size: 100%;
-       font-family: inherit; 
+       font-family: inherit;
        border: 0;
        padding: 0;
        color: darkred;
        text-align: center;
-       padding-right: 80px;
+       padding-right: 30px;
        padding-left: 30px;
        background-color: #f5e5f5;
        height:60px;
        margin-top: -60px;
        padding-top: 40px;
-       padding-bottom: 90px;
+       padding-bottom: 70px;
       }
 .create {
   border-top: 1px solid #a0a9c0;

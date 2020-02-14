@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/b21f20a653.js"></script>
-  <title>Main Page</title>
+  <title>Profile Page</title>
 </head>
 
 <body>
+  {{#users}}
   <main>
         <header>
             <div class="tb">
@@ -22,8 +23,6 @@
                     </form>
                 </div>
 
-                  {{!-- {{#users}} --}}
-
                 <div  class="td" id="i-links">
                     <div  class="tb">
                         <div  class="td" id="m-td">
@@ -33,10 +32,17 @@
                                 <span  class="td m-active"><i class="material-icons">Notifications</i></span>
                                 <form class="" action="auth/session/destroy" onsubmit="logging_out()" method="get">
                                   <tr>
-                                    <td><button type="submit" value = "Submit" id="button">Log Out</button></td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td style="background-color: blue;">
+                                      <button type="submit" value = "Submit" class="navbut3">
+                                      <span class="td m-active"><i class="material-icons" style="margin-top:50px;">Log Out</i></span>
+                                    </button>
+                                  </td>
                                   </tr>
                                 </form>
-
                             </div>
                         </div>
                         <div class="td">
@@ -68,9 +74,6 @@
 
                 </div>
                 <div id="u-name">{{this.firstname}} {{this.lastname}}</div>
-                <div class="tb" id="m-btns">                  
-            <div id="black-grd"></div>
-        </div>
         <div id="main-content">
             <div class="tb">
                 <div class="td" id="l-col">
@@ -95,24 +98,21 @@
                         <div id="photos">
                             <div class="tb">
                                 <div class="tr">
-                                     
+
                                <a class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="LONDON" data-label_2="WEATHER" data-theme="original" >LONDON WEATHER</a>
-                            <script>
-                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                            </script>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="l-cnt l-mrg" >
                         <div class="cnt-label">
-                       
-                           
+
+
                         </div>
                         <div>
                             <div class="q-ad-c">
                                 <a href="#" class="q-ad">
-                                  
+
                                     <span></span>
                                 </a>
                             </div>
@@ -149,12 +149,12 @@
                                 <div class="td" id="c-inp">
                                   <form id="new-post-form" action="/posts" method="post">
                                     <input id="message" type="text" name="message" value="" placeholder="What's on your mind?">
-                                    <button type="submit" class="signbut_main bolder" value = "Submit">Submit</button>
+                                    <button type="submit" class="signbut_main" value = "Submit">Submit</button>
                                     </form>
                                     <button type="submit" class="signbut_main bolder" value = "Submit"><a class="new-post-link" href="/posts">Go to Posts</a></button>
-                                  </div>
+                                </div>
                             </div>
-                            
+
                             <div id="insert_emoji"><i class="material-icons"></i></div>
                         </div>
                     </div>
@@ -166,8 +166,8 @@
                                     <div class="p-u-info">
                                         <a href="#">David Baez</a> shared a memory with <a href="#">{{this.firstname}} {{this.lastname}}</a>
                                     </div>
-                                    
-                                    
+
+
                                     <div class="p-dt">
                                         <i class="material-icons"></i>
                                         <span>{{this.date}}</span>
@@ -193,14 +193,14 @@
                     <div id="chat-bar">
                         <div id="chat-lb"><i class="material-icons"></i><span></span></div>
                         <div id="cts">
-                           
-                           
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-  
+
     </main>
 
     <footer class="container-fluid footer-container text-center">
@@ -267,9 +267,12 @@
         </div>
     </footer>
     
-{{!-- {{/users}} --}}
+{{/users}}
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
 
     <script>
         {{!-- JS for logging out alert --}}
@@ -299,4 +302,3 @@
 
 </body>
 </html>
-

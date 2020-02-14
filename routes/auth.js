@@ -6,7 +6,6 @@ var UserController = require('../controllers/user');
 
 router.get('/', HomeController.Index);
 router.post('/', UserController.Authenticate);
-
 router.get('/session/destroy', UserController.Logout);
 
 module.exports = router;

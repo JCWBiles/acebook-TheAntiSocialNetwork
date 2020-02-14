@@ -13,19 +13,19 @@
 </head>
 <body>
   <div id="navwrapper">
-    <div id="navbar"> 
+    <div id="navbar">
       <table class="tablewrapper">
         <form class="" action="/auth" onsubmit="social_alert3()" method="post">
           <tr>
             <td class="row1">Email</td>
-            <td class="row1">Password</td>
+            <td class="row2">Password</td>
           </tr>
           <tr>
             <td><input type="text" name="email" onclick="social_alert1()" class="inputtext">
             </td>
             <td><input type="text" name="password" onclick="social_alert2()" class="inputtext">
             </td>
-            <td><button type="submit" value ="Submit" id="button">Log In</button></td>
+            <td><button type="submit" value ="Submit" class="navbut2" >Log In</button></td>
           </tr>
         </table>
       </form>
@@ -148,7 +148,7 @@
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script>
     {{!-- JS for clock --}}
-    var div = document.getElementById('curr_time'); 
+    var div = document.getElementById('curr_time');
     function time() {
     div.innerHTML = "";
     var d = new Date();
@@ -163,16 +163,16 @@
     div.innerHTML = h + ":" + m + ":" + s;
   }
 
-  setInterval(time, 1000); 
+  setInterval(time, 1000);
 
   {{!-- JS for login alerts --}}
-  function social_alert1() {
-      alert ("Are you sure you want to be social?");
-    };
-
-    function social_alert2() {
-      alert ("Are you really sure you want to be social?");
-    };
+  // function social_alert1() {
+  //     alert ("Are you sure you want to be social?");
+  //   };
+  //
+  //   function social_alert2() {
+  //     alert ("Are you really sure you want to be social?");
+  //   };
 
     function social_alert3() {
       alert ("LAST CHANCE! You are about to be social");

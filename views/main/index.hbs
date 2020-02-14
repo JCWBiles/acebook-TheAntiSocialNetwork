@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/b21f20a653.js"></script>
   <title>Profile Page</title>
 </head>
 
@@ -13,7 +14,7 @@
         <header>
             <div class="tb">
                 <div class="td" id="logo">
-                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a onclick="curr_time" href="#"><i class="far fa-clock"></i></a>
                 </div>
                 <div  class="unique" id="search-form">
                     <form method="get" action="#">
@@ -202,6 +203,70 @@
 
     </main>
 
+    <footer class="container-fluid footer-container text-center">
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="far fa-clock "></i>Anti-Social Network Opening Hours: Mondays - let's see how Monday goes fist. 1 pm until when's lunch?.
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-map-marker-alt "></i>We are located at - Never You Mind.
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-at "></i>info@wewontreply.co.uk</br>
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-phone "></i>0208 123456789
+            </p>
+        </div>
+        <div class="col-12 ">
+
+            <ul class="list-inline social-links ">
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-facebook hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Facebook</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-twitter hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Twitter</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-linkedin-in hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">LinkedIn</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-pinterest hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Pinterest</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-instagram hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Instagram</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-youtube hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">YouTube</span>
+                        </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
 {{/users}}
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
@@ -210,10 +275,30 @@
     </script>
 
     <script>
+        {{!-- JS for logging out alert --}}
         function logging_out() {
             alert("You are now logging out - have an un-sociable day")
         };
+
+        {{!-- JS for clock --}}
+        var div = document.getElementById('curr_time'); 
+        function time() {
+        div.innerHTML = "";
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        div.innerHTML = h + ":" + m + ":" + s;
+     }
+
+        setInterval(time, 1000); 
     </script>
+    
 
 </body>
 </html>

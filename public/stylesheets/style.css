@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Lucida Grande', tahoma,verdana,arial,sans-serif;
   line-height: 1.28;
+  background-color:#f5e5f5;
 }
 
 #curr_time{
@@ -11,6 +12,27 @@ body {
     margin-left: 30px;
     font-family: tahoma,verdana,arial,sans-serif;
     font-size: 40px;
+}
+
+#btnslider_prev {
+    margin-top: 30px;
+    float: left;
+    height: 50px;
+    margin-left: 550px;
+}
+
+#btnslider_next {
+    margin-top: 30px;
+    float: right;
+    height: 50px;
+    margin-right: 590px;
+}
+
+#slider {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 700px;
+    display: inline-block;
 }
 
 #navwrapper {
@@ -420,15 +442,9 @@ h2 {
     padding: 0;
     color: darkred;
     text-align: center;
-    padding-right: 50px;
-    padding-left: 20px;
-    background-color: #f5e5f5;
-    height:60px;
-    text-align: center;
-    margin-top: -500px;
-    padding-top: 35px;
-    padding-bottom: 50px;
-    margin-right: -80px;
+    padding-right: 100px;
+    margin-left: 50px;
+    margin-right: -50px;
    }
 
    .navbut3 {
@@ -461,7 +477,7 @@ h2 {
 
 body
 {
-    margin:40px 0px;
+    margin:100px 0px;
     background-color:#f5e5f5;
 }
 
@@ -1671,4 +1687,39 @@ background-color: #aaa;
 font-size: 50px;
 color: black;
 text-align: center;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: .5rem;
+}
+
+.list-inline-item {
+    display: inline-block;
 }

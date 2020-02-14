@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/b21f20a653.js"></script>
   <title>Main Page</title>
 </head>
 
@@ -12,7 +13,7 @@
         <header>
             <div class="tb">
                 <div class="td" id="logo">
-                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a onclick="curr_time" href="#"><i class="far fa-clock"></i></a>
                 </div>
                 <div  class="unique" id="search-form">
                     <form method="get" action="#">
@@ -207,10 +208,30 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
+        {{!-- JS for logging out alert --}}
         function logging_out() {
             alert("You are now logging out - have an un-sociable day")
         };
+
+        {{!-- JS for clock --}}
+        var div = document.getElementById('curr_time'); 
+        function time() {
+        div.innerHTML = "";
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        div.innerHTML = h + ":" + m + ":" + s;
+     }
+
+        setInterval(time, 1000); 
     </script>
+    
 
 </body>
 </html>

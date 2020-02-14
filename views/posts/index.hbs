@@ -2,17 +2,25 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Acebook-Timeline</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/b21f20a653.js"></script>
   <style>
   nav a{
     display: inline;
   }
   .tb{
-    width: 125%;
+    width: 110%;
+  }
+
+  body {
+    background-color:#f5e5f5;
   }
 </style>
+<title>Acebook-Timeline</title>
 </head>
+
 <body>
   <nav>
     <div id="navwrapper">
@@ -40,7 +48,13 @@
       <div id="curr_time" onload="time()"></div>
     </div>
   </nav>
+
   <h1 style="color: black; margin: 50px;">Timeline</h1>
+  <div>
+    <button id="btnslider" onclick="prev()">Prev</button>
+      <img id="slider" src="images/anti-social-banner.jpg" width="100px" height="180px"/>
+    <button id="btnslider" onclick="next()">Next</button>
+  </div>
   <div class="wrapper" style="margin-top: -40px;">
     <section id="block" class="posts">
       <div class="each-year">
@@ -84,9 +98,71 @@
         </div>
       </section>
     </div>
-    <a class="new-post-link" href="/posts/new">New post</a><br/>
-    <a class="new-post-link" href="/">Home Page</a>
 
+    <footer class="container-fluid footer-container text-center">
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="far fa-clock "></i>Anti-Social Network Opening Hours: Mondays - let's see how Monday goes fist. 1 pm until when's lunch?.
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-map-marker-alt "></i>We are located at - Never You Mind.
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-at "></i>info@wewontreply.co.uk</br>
+            </p>
+        </div>
+        <div class="col-12">
+            <p class="inline-block ">
+                <i class="fas fa-phone "></i>0208 123456789
+            </p>
+        </div>
+        <div class="col-12 ">
+
+            <ul class="list-inline social-links ">
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-facebook hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Facebook</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-twitter hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Twitter</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-linkedin-in hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">LinkedIn</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-pinterest hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Pinterest</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-instagram hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">Instagram</span>
+                        </a>
+                </li>
+                <li class="list-inline-item ">
+                    <a target="_blank " href="# " class="hvr-icon-bounce">
+                            <i class="fab fa-youtube hvr-icon" aria-hidden="true "></i>
+                            <span class="sr-only ">YouTube</span>
+                        </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
 
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -110,7 +186,7 @@
       });
     };
     </script>
-  <script>
+    <script>
     {{!-- JS for clock --}}
     var div = document.getElementById('curr_time'); 
     function time() {
@@ -128,6 +204,27 @@
   }
 
   setInterval(time, 1000);
+
+    {{!-- JS for image slider --}}
+    var images = [src="images/anti-social-banner.jpg", src="images/meme.jpeg", src="images/sunset.jpeg"];
+    var num = 0;
+    function next() {
+      var slider = document.getElementById('slider');
+      num++;
+      if(num >= images.length) {
+        num = 0;
+      }
+      slider.src = images[num];
+    }
+    function prev() {
+      var slider = document.getElementById('slider');
+      num--;
+      if(num < 0) {
+        num = images.length-1;
+      }
+      slider.src = images[num];
+    }
     </script>
+
   </body>
   </html>

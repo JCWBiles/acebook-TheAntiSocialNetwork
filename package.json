@@ -16,14 +16,20 @@
     "node": ">=10.16.3"
   },
   "dependencies": {
+    "bcrypt": "^3.0.8",
+    "connect-mongo": "^3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "hbs": "~4.0.4",
+    "express-flash-messages": "^0.1.1",
+    "express-session": "^1.17.0",
+    "hbs": "^4.1.0",
     "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
     "mongoose": "^5.7.0",
     "morgan": "~1.9.1",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "cypress": "^3.4.1",

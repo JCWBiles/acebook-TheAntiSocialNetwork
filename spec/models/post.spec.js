@@ -37,4 +37,19 @@ describe('Post model', function() {
       });
     });
   });
+
+  it('can delete a post', function(done) {
+    var post = new Post({ message: 'some message' });
+
+    post.remove({_id: post.id}, function (err) {
+      expect(err).toBeNull();
+      
+        Post.find(function(err, posts) {
+          expect(err).toBeNull();
+
+        expect(posts.length).toEqual(0);
+        done();
+      });
+    });
+  });
 });

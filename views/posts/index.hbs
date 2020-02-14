@@ -14,6 +14,7 @@
 </style>
 </head>
 <body>
+  {{# if users}}
   <nav>
     <div id="navwrapper">
       <div id="navbar">
@@ -29,7 +30,7 @@
                                   <tr>
                                     <td><button type="submit" class="navbut2" value = "Submit" id="">Log Out</button></td>
                                   </tr>
-                                </form></i></span>                                
+                                </form></i></span>
 
                             </div>
                         </div>
@@ -40,12 +41,13 @@
       <div id="curr_time" onload="time()"></div>
     </div>
   </nav>
-  <h1 style="color: black; margin: 50px;">Timeline</h1>
+  {{#users}}
+  <h1 style="color: black; margin: 50px;">{{this.firstname}}'s Timeline</h1>
+  {{/users}}
   <div class="wrapper" style="margin-top: -40px;">
     <section id="block" class="posts">
       <div class="each-year">
         <div class="title" id="date">2020</div>
-
         {{#each posts}}
         <div class="each-event">
           <div class="event-description">
@@ -61,17 +63,11 @@
             <form style = "display: inline; float: right; margin-top: -20px;" action="/posts/comment/{{this._id}}" method="get">
                 <input type="submit" value="Comment" />
               </form>
-              {{#each comments}}
-              <li>
-                {{this.text}}
-              <li/>
-              {{/each}}
+
           </div>
         </div>
         {{/each}}
-        {{#each users}}
-        <p style="color: black;">posted by: {{this.firstname}} {{this.lastname}}</p>
-        {{/each}}
+
       </section>
       <section class="block">
         <div class="each-year">
@@ -84,6 +80,7 @@
         </div>
       </section>
     </div>
+    {{/if}}
     <a class="new-post-link" href="/posts/new">New post</a><br/>
     <a class="new-post-link" href="/">Home Page</a>
 
@@ -112,7 +109,7 @@
     </script>
   <script>
     {{!-- JS for clock --}}
-    var div = document.getElementById('curr_time'); 
+    var div = document.getElementById('curr_time');
     function time() {
     div.innerHTML = "";
     var d = new Date();

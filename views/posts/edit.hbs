@@ -1,9 +1,20 @@
-<h2>Edit your post:</h2>
-{{#each posts}}
-<form id="new-post-form" action="/posts/{{this._id}}" method="post">
-    <input type="hidden" name="_method" value="PATCH" />
-  <label for="message">Message: </label>
-  <input id="message" type="text" name="message" value="{{this.message}}">
-  <input type="submit" value="Submit">
-</form>
-{{/each}}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Posts</title>
+  </head>
+  <body style="margin-left: 100px;">
+    <h2>Edit your post:</h2>
+    {{#each posts}}
+    <form id="new-post-form" action="/posts/{{this._id}}" method="post">
+        <input type="hidden" name="_method" value="PATCH" />
+      <label for="message" style="margin-left:-90px;">Message: </label>
+      <input id="message" type="text" name="message" style="height: 100px; width: 200px" value="{{this.message}}">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    {{/each}}
+  </body>
+</html>

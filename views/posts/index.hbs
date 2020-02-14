@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
   <link rel="stylesheet" type="text/css" src="./public/stylesheets/style.css">
   <script src="https://kit.fontawesome.com/b21f20a653.js"></script>
   <style>
@@ -33,7 +33,7 @@
                         <div  class="td" id="m-td">
                             <div class="tb">
                                 <span  class="td"><i class="material-icons"><button type="submit" class="navbut1" value = "Submit"><a href="/main">Main Page</a></button></i></span>
-                                <span class="td"><i class="material-icons"><form class="" action="auth/session/destroy" onsubmit="logging_out()" method="get">
+                                <span style="background-color: #f5e5f5;" class="td"><i class="material-icons"><form class="" action="auth/session/destroy" onsubmit="logging_out()" method="get">
                                   <tr>
                                     <td><button type="submit" class="navbut2" value = "Submit" id="">Log Out</button></td>
                                   </tr>
@@ -51,9 +51,9 @@
 
   <h1 style="color: black; margin: 50px;">Timeline</h1>
   <div>
-    <button id="btnslider" onclick="prev()">Prev</button>
+    <button id="btnslider_prev" onclick="prev()">Prev</button>
       <img id="slider" src="images/anti-social-banner.jpg" width="100px" height="180px"/>
-    <button id="btnslider" onclick="next()">Next</button>
+    <button id="btnslider_next" onclick="next()">Next</button>
   </div>
   <div class="wrapper" style="margin-top: -40px;">
     <section id="block" class="posts">

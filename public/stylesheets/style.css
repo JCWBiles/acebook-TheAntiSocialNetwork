@@ -411,7 +411,7 @@ h2 {
     font-family: inherit;
     border: 0;
     padding: 0;
-    color: white;
+    color: darkred;
     text-align: center;
     padding-right: 50px;
     padding-left: 20px;
@@ -420,7 +420,7 @@ h2 {
     text-align: center;
     margin-top: -700px;
     padding-top: 35px;
-    padding-bottom: 52px;
+    padding-bottom: 50px;
    }
 
    .navbut3 {
@@ -428,7 +428,7 @@ h2 {
        font-family: inherit;
        border: 0;
        padding: 0;
-       color: white;
+       color: darkred;
        text-align: center;
        padding-right: 80px;
        padding-left: 30px;
